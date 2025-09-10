@@ -1,0 +1,42 @@
+[project]
+name = "reelctxt"
+version = "0.1.0"
+description = "Generate short vertical reel videos from prompt + contextual corpus (text/images/web)."
+authors = [{name = "Your Name", email = "you@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["video", "llm", "reels", "storyboard", "ffmpeg"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = [
+  "requests>=2.32.0",
+  "beautifulsoup4>=4.12.0",
+  "Pillow>=10.0.0",
+  "numpy>=1.26.0",
+  "openai>=1.40.0",
+  "scikit-learn>=1.5.0", # TF-IDF + cosine similarity
+  "pydantic>=2.7.0"
+]
+
+[project.urls]
+Homepage = "https://example.com"
+
+[project.scripts]
+reelctxt = "reelctxt.cli:main"
+
+[project.optional-dependencies]
+voice = ["TTS>=0.22.0" ]
+dev = [
+  "pytest>=8.2"
+]
+
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
